@@ -1,5 +1,8 @@
 body {
     margin: 0;
+    min-height: calc(100vh - 50px);
+    position: relative;
+    padding-bottom: 50px;
 }
 
 a {
@@ -9,6 +12,24 @@ a {
 
 h1 {
     font-size: 28pt;
+}
+
+h2 {
+    margin: 0;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    height: 25px;
+    width: 100%;
+    padding: 10px 0;
+    background-color: #eee;
+}
+
+.headline-wrapper {
+    background-color: #eee;
+    padding: 17px;
 }
 
 .stretchWidth {
@@ -191,7 +212,7 @@ h1 {
 
 /* Works */
 .works-entry {
-    margin-bottom: 50px;
+    margin: 20px 0 50px 0;
 }
 
 
