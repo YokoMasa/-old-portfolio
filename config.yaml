@@ -1,4 +1,4 @@
-baseURL: 'http://example.org/'
+baseURL: 'https://yokomasa.netlify.app/'
 languageCode: 'ja-jp'
 title: 'Masato Yokota'
 theme: 'myTheme'
