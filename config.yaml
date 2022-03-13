@@ -1,0 +1,24 @@
+baseURL: 'http://example.org/'
+languageCode: 'ja-jp'
+title: 'Masato Yokota'
+theme: 'myTheme'
+defaultContentLanguage: jp
+languages:
+  jp:
+    title: 'Masato Yokota'
+    weight: 1
+    menu:
+      mymenu:
+      - name: 'Works'
+        url: '/works'
+      - name: 'Blog'
+        url: '/post'
+  en:
+    title: 'Masato Yokota'
+    weight: 2
+    menu:
+      mymenu:
+      - name: 'Works'
+        url: '/works'
+      - name: 'Blog'
+        url: '/post'

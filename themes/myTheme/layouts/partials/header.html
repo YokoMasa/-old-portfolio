@@ -1,0 +1,86 @@
+<header class="header">
+    <script>
+        function isEnglish() {
+            var url = new URL(window.location.href);
+            return url.pathname.startsWith("/en/");
+        }
+
+        function toggleLang() {
+            var url = new URL(window.location.href);
+            if (url.pathname.startsWith("/en/")) {
+                url.pathname = url.pathname.replace("/en/", "");
+            } else {
+                url.pathname = "/en" + url.pathname;
+            }
+            window.location = url.toString();
+        }
+
+        function showSpNav(e) {
+            var nav = document.getElementById("header-menu-nav-sp-overlay");
+            nav.style.display = "block";
+            nav.animate([
+                {
+                    opacity: 0
+                },
+                {
+                    opacity: 1
+                }
+            ], 200);
+        }
+
+        function hideSpNav(e) {
+            var nav = document.getElementById("header-menu-nav-sp-overlay");
+            var anim = nav.animate([
+                {
+                    opacity: 1
+                },
+                {
+                    opacity: 0
+                }
+            ], 200);
+            anim.addEventListener("finish", () => nav.style.display = "none");
+        }
+
+        window.addEventListener('load', (event) => {
+            // lang toggle
+            if (isEnglish()) {
+                document.getElementById("lang-toggle-en").classList.add("header-lang-active");
+                document.getElementById("lang-toggle-en").classList.add("t-color-white");
+            } else {
+                document.getElementById("lang-toggle-ja").classList.add("header-lang-active");
+                document.getElementById("lang-toggle-ja").classList.add("t-color-white");
+            }
+
+            document.getElementById("lang-toggle").addEventListener("click", toggleLang);
+
+            // sp hamburger
+            document.getElementById("header-menu-hamburger").addEventListener("click", showSpNav);
+            document.getElementById("header-menu-cross").addEventListener("click", hideSpNav);
+        });
+    </script>
+    <div class="content stretchHeight">
+        <div class="flexCenter stretchHeight">
+            <a href="{{ .Site.Home.Permalink | absLangURL }}" class="header-logo t-size-midium">Masato Yokota</a>
+            <div class="header-menu">
+                <div class="header-menu-nav-pc">
+                    {{ range .Site.Menus.mymenu }}
+                        <a href="{{ .URL | absLangURL }}" class="header-menu-item">{{ .Name }}</a>
+                    {{ end }}
+                </div>
+                <div id="header-menu-hamburger" class="header-menu-hamburger"></div>
+                <div id="lang-toggle" class="header-lang-toggle t-size-xsmall">
+                    <span id="lang-toggle-en" class="header-lang-item flexCenter">en</span>
+                    <span id="lang-toggle-ja" class="header-lang-item flexCenter">ja</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="header-menu-nav-sp-overlay" class="header-menu-nav-sp-overlay">
+        <div class="header-menu-cross" id="header-menu-cross"></div>
+        <div class="header-menu-nav-sp">
+            {{ range .Site.Menus.mymenu }}
+                <a href="{{ .URL | absLangURL }}" class="header-menu-item">{{ .Name }}</a>
+            {{ end }}
+        </div>
+    </div>
+</header>
