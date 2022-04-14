@@ -11,8 +11,6 @@ languages:
       mymenu:
       - name: 'Works'
         url: '/works'
-      - name: 'Blog'
-        url: '/post'
   en:
     title: 'Masato Yokota'
     weight: 2
@@ -20,5 +18,3 @@ languages:
       mymenu:
       - name: 'Works'
         url: '/works'
-      - name: 'Blog'
-        url: '/post'

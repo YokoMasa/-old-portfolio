@@ -6,17 +6,12 @@
         </div>
     </section>
     <section class="content">
-        <article>
-            {{.Content}}
-        </article>
-        <ul>
         <!-- Ranges through content/posts/*.md -->
         {{ range .Pages }}
-            <li>
+            <p style="margin: 10px 0">
                 <a href="{{.Permalink}}">{{.Date.Format "2006-01-02"}} | {{.Title}}</a>
-            </li>
+            </p>
         {{ end }}
-        </ul>
     </section>
 </main>
 {{ end }}

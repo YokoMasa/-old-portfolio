@@ -215,6 +215,64 @@ footer {
     margin: 20px 0 50px 0;
 }
 
+/* Contents */
+.blog-content h1 {
+    font-size: 22pt;
+    border-bottom: #ddd solid 1px;
+}
+
+.blog-content h2 {
+    border-bottom: #ddd solid 1px;
+}
+
+.blog-content h3::before {
+    content: "";
+    display: inline-block;
+    position: relative;
+    top: 1px;
+    height: 0.8em;
+    width: 0.8em;
+    margin-right: 10px;
+    background: #ddd;
+}
+
+.blog-content a {
+    text-decoration: underline;
+}
+
+pre {
+    overflow: auto;
+}
+
+.blog-content code {
+    margin: 10px 0;
+    padding: 10px 10px;
+    display: block;
+    background-color: #444;
+    color: white;
+}
+
+.blog-content table {
+    border-collapse: collapse;
+    border: #424242 solid 1px;
+}
+
+.blog-content td {
+    padding: 5px;
+    border: #424242 solid 1px;
+}
+
+.blog-content th {
+    padding: 5px;
+    background-color: #ddd;
+    border: #424242 solid 1px;
+}
+
+.blog-content img {
+    object-fit: contain;
+    max-width: 100%;
+    height: auto;
+}
 
 @media (max-width: 480px) {
     h1 {
